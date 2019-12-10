@@ -34,7 +34,7 @@ function MocktilleryPlugin(script, events, opts) {
       script.config.processor = {};
     }
 
-    script.config.processor.mockingbirdPluginCreateVariables = function(
+    script.config.processor.mocktilleryPluginCreateVariables = function(
       userContext,
       events,
       done
@@ -49,7 +49,7 @@ function MocktilleryPlugin(script, events, opts) {
       return done();
     };
 
-    script.config.processor.mockingbirdPluginSetOpts = function(
+    script.config.processor.mocktilleryPluginSetOpts = function(
       req,
       userContext,
       events,
@@ -76,8 +76,8 @@ function MocktilleryPlugin(script, events, opts) {
         scenario.beforeRequest = [];
       }
 
-      scenario.beforeScenario.push('mockingbirdPluginCreateVariables');
-      scenario.beforeRequest.push('mockingbirdPluginSetOpts');
+      scenario.beforeScenario.push('mocktilleryPluginCreateVariables');
+      scenario.beforeRequest.push('mocktilleryPluginSetOpts');
     });
 
     debug('Mocktillery Plugin initialized');
