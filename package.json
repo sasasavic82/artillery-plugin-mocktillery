@@ -1,6 +1,6 @@
 {
     "name": "artillery-plugin-mocktillery",
-    "version": "0.0.10",
+    "version": "0.0.11",
     "description": "Mocktillery Plugin",
     "main": "index.js",
     "repository": {
