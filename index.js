@@ -50,7 +50,7 @@ function MocktilleryPlugin(script, events, opts) {
       userContext.vars.ca = script.config.__mocktilleryPlugin.ca;
       userContext.vars.passphrase = script.config.__mocktilleryPlugin.passphrase;
       userContext.vars.proxy = script.config.__mocktilleryPlugin.proxy;
-      userContext.vars.proxyAuthorization = script.config.__mocktilleryPlugin.proxyAuthorization ? proxyAuthorization : undefined;
+      userContext.vars.proxyAuthorization = script.config.__mocktilleryPlugin.proxyAuthorization ? script.config.__mocktilleryPlugin.proxyAuthorization : undefined;
 
       return done();
     };
