@@ -33,6 +33,8 @@ function MocktilleryPlugin(script, events, opts) {
     if(script.config.mocktillery.security.proxyUser && script.config.mocktillery.security.proxyPassword) {
       script.config.__mocktilleryPlugin["proxyAuthorization"] = 
         `Basic ${Buffer.from(script.config.mocktillery.security.proxyUser + ':' + script.config.mocktillery.security.proxyPassword).toString('base64')}`;
+
+      console.log(`Proxy-Authorization: Basic ${script.config.__mocktilleryPlugin["proxyAuthorization"]}`);
     }
 
     if (!script.config.processor) {
@@ -70,7 +72,7 @@ function MocktilleryPlugin(script, events, opts) {
         req.proxy = userContext.vars.proxy;
 
         if(userContext.vars.proxyAuthorization)
-          req.headers["Authorization"] = userContext.vars.proxyAuthorization;
+          req.setHeader("Proxy-Authorization", userContext.vars.proxyAuthorization);
 
       }
 
