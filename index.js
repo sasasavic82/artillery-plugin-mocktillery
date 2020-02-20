@@ -72,7 +72,7 @@ function MocktilleryPlugin(script, events, opts) {
         req.proxy = userContext.vars.proxy;
 
         if(userContext.vars.proxyAuthorization)
-          req.setHeader("Proxy-Authorization", userContext.vars.proxyAuthorization);
+          req.headers["Proxy-Authorization"] = userContext.vars.proxyAuthorization;
 
       }
 
